@@ -6,7 +6,7 @@
 
 cmd() {
     target=$(kubectl get po -n kube-system | grep kube-registry-v0 | awk '{print $1;}')
-    exec kubectl port-forward --namespace kube-system $target 5000:5000
+    exec kubectl port-forward --namespace kube-system $target 5000:5000 > /dev/null
 }
 
 cmd &
